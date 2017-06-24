@@ -2,7 +2,7 @@
 import {ElementFinder} from "protractor";
 
 declare module protractor {
-    interface Protractor {
+    interface IProtractorLocatorStrategy {
         /**
          * Find an element by data-test-id.
          *
