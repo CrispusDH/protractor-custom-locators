@@ -1,0 +1,26 @@
+{
+  "name": "protractor-custom-locators",
+  "version": "1.0.0",
+  "description": "Collection of additional protractor locators",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrispusDH/protractor-custom-locators.git"
+  },
+  "keywords": [
+    "protractor",
+    "locators"
+  ],
+  "author": "Oleksii Ihnatiuk <qacrispus@gmail.com> (https://github.com/CrispusDH)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrispusDH/protractor-custom-locators/issues"
+  },
+  "homepage": "https://github.com/CrispusDH/protractor-custom-locators#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.0",
+    "protractor": "^5.1.2",
+    "typescript": "2.3.4"
+  }
+}
