@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/CrispusDH/protractor-custom-locators#readme",
   "devDependencies": {
-    "@types/node": "^8.0.0",
     "protractor": "^5.1.2",
     "typescript": "2.3.4"
   }
