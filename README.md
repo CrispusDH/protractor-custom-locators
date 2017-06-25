@@ -4,7 +4,7 @@ This module adds a custom locators to a protractor instance that finds elements 
 * locator that finds element by `data-test-id` attribute
   * locator name - `dataTestId`
 ## Installation
-`$ npm install protractor-custom-locator`
+`$ npm install protractor-custom-locators`
 ## Usage
 that you should put in your protractor.config.js:
 ```
