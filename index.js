@@ -8,5 +8,14 @@ module.exports = function (ptor) {
         return Array.prototype.filter.call(nodes, function(node) {
             return (node.getAttribute('data-test-id') === dataTestId);
         });
-    })
+    });
+
+    ptor.by.addLocator('dataReactId',
+        function (dataReactId, parentElement) {
+            var using = parentElement || document;
+            var nodes = using.querySelectorAll('[data-reactid]');
+            return Array.prototype.filter.call(nodes, function(node) {
+                return (node.getAttribute('data-test-id') === dataTestId);
+            });
+        })
 };

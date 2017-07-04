@@ -3,6 +3,8 @@ This module adds a custom locators to a protractor instance that finds elements 
 ### list of currently available locators:
 * locator that finds element by `data-test-id` attribute
   * locator name - `dataTestId`
+* locator that finds element by `data-reactid` attribute
+  * locator name - `dataReactId`
 ## Installation
 `$ npm install protractor-custom-locators`
 ## Usage
