@@ -23,8 +23,8 @@ const dataReactId = function (ptor) {
 };
 
 const addCustomLocator = {
-    dataTestId: dataTestId(),
-    dataReactId: dataReactId()
+    dataTestId: dataTestId,
+    dataReactId: dataReactId
 };
 
 export default addCustomLocator;
