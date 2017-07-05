@@ -6,7 +6,7 @@ export class AddCustomLocators {
         protractor.by.addLocator(locatorName,
             function (locatorName, parentElement) : void {
                 let using = parentElement || document;
-                let nodes = using.querySelectorAll('[${locatorAttribute}]');
+                let nodes = using.querySelectorAll('[' + locatorAttribute + ']');
                 return Array.prototype.filter.call(nodes, function (node) {
                     return (node.getAttribute(locatorAttribute) === locatorName);
                 });
