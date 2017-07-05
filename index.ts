@@ -2,7 +2,7 @@ import {Ptor} from "protractor";
 
 export class AddCustomLocators {
 
-    createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) : void {
+    static createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) : void {
         protractor.by.addLocator(locatorName,
             function (locatorName, parentElement) : void {
                 let using = parentElement || document;
