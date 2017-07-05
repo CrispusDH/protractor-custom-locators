@@ -3,12 +3,13 @@ import {Ptor} from "protractor";
 export class AddCustomLocators {
 
     static createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) : void {
+        let innerLocatorAttribute = locatorAttribute;
         protractor.by.addLocator(locatorName,
             function (locatorInnerName, parentElement) : void {
                 let using = parentElement || document;
-                let nodes = using.querySelectorAll('[' + locatorAttribute + ']');
+                let nodes = using.querySelectorAll('[' + innerLocatorAttribute + ']');
                 return Array.prototype.filter.call(nodes, function (node) {
-                    return (node.getAttribute(locatorAttribute) === locatorInnerName);
+                    return (node.getAttribute(innerLocatorAttribute) === locatorInnerName);
                 });
             });
     }
