@@ -2,13 +2,13 @@ import {Ptor} from "protractor";
 
 export class AddCustomLocators {
 
-    createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) {
+    createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) : void {
         protractor.by.addLocator(locatorName,
-            function (dataTestId, parentElement) {
+            function (locatorName, parentElement) : void {
                 let using = parentElement || document;
                 let nodes = using.querySelectorAll('[${locatorAttribute}]');
                 return Array.prototype.filter.call(nodes, function (node) {
-                    return (node.getAttribute(locatorAttribute) === dataTestId);
+                    return (node.getAttribute(locatorAttribute) === locatorName);
                 });
             });
     }
