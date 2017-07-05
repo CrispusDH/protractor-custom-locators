@@ -4,11 +4,11 @@ export class AddCustomLocators {
 
     static createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) : void {
         protractor.by.addLocator(locatorName,
-            function (locatorName, parentElement) : void {
+            function (locatorInnerName, parentElement) : void {
                 let using = parentElement || document;
                 let nodes = using.querySelectorAll('[' + locatorAttribute + ']');
                 return Array.prototype.filter.call(nodes, function (node) {
-                    return (node.getAttribute(locatorAttribute) === locatorName);
+                    return (node.getAttribute(locatorAttribute) === locatorInnerName);
                 });
             });
     }
