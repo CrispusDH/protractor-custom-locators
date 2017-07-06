@@ -2,16 +2,15 @@ import {Ptor} from "protractor";
 
 export class AddCustomLocators {
 
-    static createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) {
+    static createCustomLocator(protractor: Ptor, locatorName: string) {
         console.log("''''''''''''''''''''''''''''''''''");
-        console.log(this.createCustomLocator);
+        console.log(this.createCustomLocator.arguments);
         console.log("''''''''''''''''''''''''''''''''''");
         protractor.by.addLocator(locatorName,
             function (expected, parentElement) {
                 console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''1");
                 let using = parentElement || document;
                 console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''2");
-                console.log(locatorAttribute);
                 let nodes = using.querySelectorAll(`[data-reactid]`);
                 return Array.prototype.filter.call(nodes, function (node) {
                     return (node.getAttribute(`data-reactid`) === expected);
