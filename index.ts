@@ -8,8 +8,9 @@ export class AddCustomLocators {
         console.log("''''''''''''''''''''''''''''''''''");
         protractor.by.addLocator(locatorName,
             function (expected, parentElement) {
+                console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''1");
                 let using = parentElement || document;
-                console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''");
+                console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''2");
                 console.log(locatorAttribute);
                 let nodes = using.querySelectorAll(`[${locatorAttribute}]`);
                 return Array.prototype.filter.call(nodes, async function (node) {
