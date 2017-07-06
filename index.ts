@@ -1,8 +1,6 @@
-import {Ptor} from "protractor";
-
 export class AddCustomLocators {
 
-    static createCustomLocator(protractor: Ptor, locatorName: string) {
+    static createCustomLocator(protractor, locatorName: string) {
         console.log("''''''''''''''''''''''''''''''''''");
         console.log(this.createCustomLocator.arguments);
         console.log("''''''''''''''''''''''''''''''''''");
@@ -17,6 +15,7 @@ export class AddCustomLocators {
                 });
             });
     }
+
 /*
  'use strict';
 
