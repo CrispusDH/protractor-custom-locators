@@ -7,12 +7,12 @@ export class AddCustomLocators {
         console.log(this.createCustomLocator);
         await protractor.by.addLocator(locatorName,
             async function (expected, parentElement) {
-                let using = await parentElement || await document;
+                let using = parentElement || document;
                 console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''");
                 console.log(locatorAttribute);
                 let nodes = await using.querySelectorAll(`[${locatorAttribute}]`);
-                return await Array.prototype.filter.call(nodes, async function (node) {
-                    return await (node.getAttribute(`${locatorAttribute}`) === expected);
+                return Array.prototype.filter.call(nodes, async function (node) {
+                    return (node.getAttribute(`${locatorAttribute}`) === expected);
                 });
             });
     }
