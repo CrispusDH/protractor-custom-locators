@@ -2,8 +2,8 @@ import {Ptor} from "protractor";
 
 export default class AddCustomLocators {
 
-    static createCustomLocator(protractor: Ptor) {
-    protractor.by.addLocator('dataReactId',
+    static createCustomLocator(protractor: Ptor, locatorName: string) {
+    protractor.by.addLocator(locatorName,
         function (expected, parentElement: HTMLElement | null) {
             let using = parentElement || document;
             let nodes = using.querySelectorAll('[data-reactid]');
