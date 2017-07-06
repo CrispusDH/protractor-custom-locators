@@ -2,15 +2,16 @@ import {Ptor} from "protractor";
 
 export class AddCustomLocators {
 
-    static async createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) {
+    static createCustomLocator(protractor: Ptor, locatorName: string, locatorAttribute: string) {
         console.log("''''''''''''''''''''''''''''''''''");
         console.log(this.createCustomLocator);
-        await protractor.by.addLocator(locatorName,
-            async function (expected, parentElement) {
+        console.log("''''''''''''''''''''''''''''''''''");
+        protractor.by.addLocator(locatorName,
+            function (expected, parentElement) {
                 let using = parentElement || document;
                 console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''");
                 console.log(locatorAttribute);
-                let nodes = await using.querySelectorAll(`[${locatorAttribute}]`);
+                let nodes = using.querySelectorAll(`[${locatorAttribute}]`);
                 return Array.prototype.filter.call(nodes, async function (node) {
                     return (node.getAttribute(`${locatorAttribute}`) === expected);
                 });
