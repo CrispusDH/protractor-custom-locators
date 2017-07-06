@@ -12,9 +12,9 @@ export class AddCustomLocators {
                 let using = parentElement || document;
                 console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''2");
                 console.log(locatorAttribute);
-                let nodes = using.querySelectorAll(`[${locatorAttribute}]`);
+                let nodes = using.querySelectorAll(`[data-reactid]`);
                 return Array.prototype.filter.call(nodes, async function (node) {
-                    return (node.getAttribute(`${locatorAttribute}`) === expected);
+                    return (node.getAttribute(`data-reactid`) === expected);
                 });
             });
     }
