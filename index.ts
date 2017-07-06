@@ -1,20 +1,17 @@
-export class AddCustomLocators {
+import {Ptor} from "protractor";
 
-    static createCustomLocator(protractor, locatorName: string) {
-        console.log("''''''''''''''''''''''''''''''''''");
-        console.log(this.createCustomLocator.arguments);
-        console.log("''''''''''''''''''''''''''''''''''");
-        protractor.by.addLocator(locatorName,
-            function (expected, parentElement) {
-                console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''1");
-                let using = parentElement || document;
-                console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''2");
-                let nodes = using.querySelectorAll(`[data-reactid]`);
-                return Array.prototype.filter.call(nodes, function (node) {
-                    return (node.getAttribute(`data-reactid`) === expected);
-                });
+export default class AddCustomLocators {
+
+    static createCustomLocator(protractor: Ptor) {
+    protractor.by.addLocator('dataReactId',
+        function (expected, parentElement: HTMLElement | null) {
+            let using = parentElement || document;
+            let nodes = using.querySelectorAll('[data-reactid]');
+            return Array.prototype.filter.call(nodes, function (node) {
+                return (node.getAttribute('data-reactid') === expected);
             });
-    }
+        });
+};
 
 /*
  'use strict';
