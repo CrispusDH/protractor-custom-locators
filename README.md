@@ -10,8 +10,11 @@ This module adds a custom locators to a protractor instance that finds elements 
 ## Usage
 that you should put in your protractor.config.js:
 ```
-onPrepare: function () {
-  require('protractor-custom-locators')(protractor);
+import AddCustomLocators from "protractor-custom-locators/index";
+
+onPrepare() {
+   AddCustomLocators.addDataTestId(protractor);
+   AddCustomLocators.addDataReactId(protractor);
 }
 ```
 The locator can then be used with `element(by.locatorName(args))`.
