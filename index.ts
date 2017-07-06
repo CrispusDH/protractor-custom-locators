@@ -13,7 +13,7 @@ export class AddCustomLocators {
                 console.log("''''''''''''''''''''''''**********''''''''''''''''''''''''''''''''''2");
                 console.log(locatorAttribute);
                 let nodes = using.querySelectorAll(`[data-reactid]`);
-                return Array.prototype.filter.call(nodes, async function (node) {
+                return Array.prototype.filter.call(nodes, function (node) {
                     return (node.getAttribute(`data-reactid`) === expected);
                 });
             });
