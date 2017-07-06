@@ -1,6 +1,6 @@
 {
   "name": "protractor-custom-locators",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "description": "Collection of additional protractor locators",
   "main": "index.ts",
   "repository": {
